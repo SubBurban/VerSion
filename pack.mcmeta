@@ -1,15 +1,21 @@
 {
   "pack": {
-    "description": {
-      "text": "API Pack to fetch current Version\nby TrenceBence",
-      "color": "dark_aqua"
-    },
+    "description": [
+      {
+        "text": "API Pack providing MC Version",
+        "color": "gray"
+      },
+      {
+        "text": "\nby TrenceBence",
+        "color": "dark_aqua"
+      }
+    ],
     "min_format": 16,
     "max_format": 122,
     "pack_format": 100,
     "supported_formats": {
       "min_inclusive": 16,
-      "max_inclusive": 100
+      "max_inclusive": 122
     }
   },
   "overlays": {
