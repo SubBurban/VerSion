@@ -1,0 +1,15 @@
+{
+  "pack": {
+    "description": {
+      "text": "API Pack to fetch current Version\nby TrenceBence",
+      "color": "dark_aqua"
+    },
+    "min_format": 23,
+    "max_format": 122,
+    "pack_format": 100,
+    "supported_formats": {
+      "min_inclusive": 23,
+      "max_inclusive": 100
+    }
+  }
+}
