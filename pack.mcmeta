@@ -11,5 +11,15 @@
       "min_inclusive": 23,
       "max_inclusive": 100
     }
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "format_0107",
+        "formats": 107,
+        "min_format": 107,
+        "max_format": 107
+      }
+    ]
   }
 }
