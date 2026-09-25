@@ -4,16 +4,58 @@
       "text": "API Pack to fetch current Version\nby TrenceBence",
       "color": "dark_aqua"
     },
-    "min_format": 23,
+    "min_format": 16,
     "max_format": 122,
     "pack_format": 100,
     "supported_formats": {
-      "min_inclusive": 23,
+      "min_inclusive": 16,
       "max_inclusive": 100
     }
   },
   "overlays": {
     "entries": [
+      {
+        "directory": "format_0016",
+        "formats": 16,
+        "min_format": 16,
+        "max_format": 16
+      },
+      {
+        "directory": "format_0017",
+        "formats": 17,
+        "min_format": 17,
+        "max_format": 17
+      },
+      {
+        "directory": "format_0018",
+        "formats": 18,
+        "min_format": 18,
+        "max_format": 18
+      },
+      {
+        "directory": "format_0019",
+        "formats": 19,
+        "min_format": 19,
+        "max_format": 19
+      },
+      {
+        "directory": "format_0020",
+        "formats": 20,
+        "min_format": 20,
+        "max_format": 20
+      },
+      {
+        "directory": "format_0021",
+        "formats": 21,
+        "min_format": 21,
+        "max_format": 21
+      },
+      {
+        "directory": "format_0022",
+        "formats": 22,
+        "min_format": 22,
+        "max_format": 22
+      },
       {
         "directory": "format_0023",
         "formats": 23,
