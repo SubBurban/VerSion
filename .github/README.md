@@ -1,3 +1,5 @@
+Modern, lightweight Version Detector data pack with minimal footprint and actual pack format detection. Intended as a dependency for all sorts of other packs.
+
 ## VerSion
 
 In Minecraft Vanilla, there is no simple command (or any source, that is) providing the currently running Minecraft Version or [data pack format](https://minecraft.wiki/w/Pack_format) to datapacks.
@@ -20,7 +22,7 @@ To make use of that information in your pack, use `execute store ... run data ge
 
 **For formats beginning with 23 (versions 23w44a and later), the most convenient way to get the pack format is `function ver:sion` which simply returns the current pack format.**
 
-### Supported verions
+### Supported versions
 
 Due to the way VerSion works out the current pack format, only version 1.20.2 and later (specifically, beginning 23w31a) may be detected. For simplicity, only the major format number is taken into account.
 
