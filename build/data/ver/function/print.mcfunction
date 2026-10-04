@@ -1,0 +1,1 @@
+tellraw @s {translate:"",fallback:"%s – You are currently running %s",with:[{text:"VerSion",color:"aqua",click_event:{action:"open_url",url:"https://modrinth.com/datapack/version"}},[{text:"Minecraft ",hover_event:{action:"show_text",value:["Pack format ",{nbt:"Format",storage:"ver:sion"}]}},{nbt:"Name",storage:"ver:sion",interpret:true}]]}
