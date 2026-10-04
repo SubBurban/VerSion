@@ -1,1 +1,1 @@
-data merge storage ver:sion {Format:0,Name:"Unknown"}
+data modify storage ver:sion Current set value {Format:0,Name:"Unknown"}
