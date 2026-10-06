@@ -25,7 +25,6 @@ def overlays(ctx: Context):
             }
         )
         pack = DataPack()
-        funcSion = Function([f"return {format}"])
 
         matching_versions = [
             version for version in data
@@ -36,6 +35,7 @@ def overlays(ctx: Context):
             matching_versions = stable_versions
         name = min(matching_versions, key=lambda version: version["data_version"])["name"]
         
+        funcSion = Function([f"return {format}"])
         funcLoad = Function([f"data modify storage ver:sion Current set value {{Format:{format},Name:\"{name}\"}}"])
         
         if format < 45: #for formats <45, "functions" was "function", however beet doesn't seem to support that, so manually it is
@@ -49,12 +49,16 @@ def overlays(ctx: Context):
     ctx.data.mcmeta.data["overlays"]["entries"] = entries
 
 def globals(ctx: Context):
+    # load tags & overlay fallback function
     ctx.data.extra["data/minecraft/tags/functions/load.json"] = ctx.data.function_tags["minecraft:load"] = JsonFile({"values": ["ver:load"], "replace": False})
-    ctx.data.extra["data/ver/functions/load.mcfunction"] = ctx.data.functions["ver:load"] = Function("data modify storage ver:sion Current set value {Format:0,Name:\"Unknown\"}")
+    ctx.data.extra["data/ver/functions/overlay_data.mcfunction"] = ctx.data.functions["ver:overlay_data"] = Function("data modify storage ver:sion Current set value {Format:0,Name:\"Unknown\"}")
+    # pack description
+    ctx.data.description = ctx.meta["desc"]
     with urlopen(
 			"https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json"
 		) as response:
             data = JsonFile(json.load(response)).data
-    ctx.data.min_format = 16
+    # supported pack format ranges
+    ctx.data.min_format = 16 # as macros were also added in 23w31a, we don't do earlier versions
     ctx.data.pack_format = ctx.data.max_format = max(version["data_pack_version"] for version in data)
     ctx.data.supported_formats = {"min_inclusive": ctx.data.min_format, "max_inclusive": ctx.data.max_format}

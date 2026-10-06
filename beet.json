@@ -2,8 +2,10 @@
 	"output": ".",
 	"data_pack": {
 		"name": "build",
-		"load": ["src"],
-		"description": [{"text": "API Pack providing MC Version","color": "gray"},{"text": "\nby TrenceBence","color": "dark_aqua"}]
+		"load": ["src"]
 	},
-	"pipeline": ["version.overlays","version.globals"]
+	"pipeline": ["version.overlays","version.globals"],
+	"meta": {
+		"desc": [{"text": "API Pack providing MC Version","color": "gray"},{"text": "\nby TrenceBence","color": "dark_aqua"}]
+	}
 }
