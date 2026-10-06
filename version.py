@@ -52,6 +52,9 @@ def globals(ctx: Context):
     # load tags & overlay fallback function
     ctx.data.extra["data/minecraft/tags/functions/load.json"] = ctx.data.function_tags["minecraft:load"] = JsonFile({"values": ["ver:load"], "replace": False})
     ctx.data.extra["data/ver/functions/overlay_data.mcfunction"] = ctx.data.functions["ver:overlay_data"] = Function("data modify storage ver:sion Current set value {Format:0,Name:\"Unknown\"}")
+    # src function compatibility
+    ctx.data.extra["data/ver/functions/load.mcfunction"] = ctx.data.functions["ver:load"]
+    ctx.data.extra["data/ver/functions/_/fetch_data.mcfunction"] = ctx.data.functions["ver:_/fetch_data"]
     # pack description
     ctx.data.description = ctx.meta["desc"]
     with urlopen(
