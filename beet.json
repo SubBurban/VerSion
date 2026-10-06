@@ -4,8 +4,8 @@
 		"name": "build",
 		"load": ["src"]
 	},
-	"pipeline": ["version.overlays","version.globals"],
+	"pipeline": ["version.overlays","version.globals","version.print"],
 	"meta": {
-		"desc": [{"text": "API Pack providing MC Version","color": "gray"},{"text": "\nby TrenceBence","color": "dark_aqua"}]
+		"desc": [{"text": "API pack providing MC version","color": "#d18023"},{"text": "\nby TrenceBence","color": "gray"}]
 	}
 }

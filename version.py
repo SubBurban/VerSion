@@ -16,15 +16,9 @@ def overlays(ctx: Context):
         if any(entry["formats"] == format for entry in entries):
             continue
         
-        entries.append(
-            {
-                "formats": format,
-                "min_format": format,
-                "max_format": format,
-                "directory": f"format_{format}"
-            }
-        )
+        
         pack = DataPack()
+        pack.supported_formats = pack.min_format = pack.max_format = format
 
         matching_versions = [
             version for version in data
@@ -46,7 +40,7 @@ def overlays(ctx: Context):
             pack.functions["ver:sion"] = funcSion
             pack.functions["ver:_/overlay_data"] = funcLoad
         ctx.data.overlays[f"format_{format}"] = pack
-    ctx.data.mcmeta.data["overlays"]["entries"] = entries
+    #ctx.data.mcmeta.data["overlays"]["entries"] = entries
 
 def globals(ctx: Context):
     # load tags & overlay fallback function
@@ -68,3 +62,12 @@ def globals(ctx: Context):
     # provide data to pack via command storages
     versions_text = json.dumps(data, separators=(",", ":"))
     ctx.data.extra["data/ver/functions/_/version_data.mcfunction"] = ctx.data.functions["ver:_/version_data"] = Function(f"data modify storage ver:sion Data set value {versions_text}")
+
+def print(ctx: Context):
+    '''Accounts for the Text Component Overhaul in 1.21.5'''
+    pack = DataPack()
+    pack.extra["data/ver/functions/print.mcfunction"] = pack.functions["ver:print"] = Function('tellraw @s {"translate":"","fallback":"%s – You are currently running %s","with":[{"text":"VerSion","color":"aqua","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/version"}},[{"text":"Minecraft ","hoverEvent":{"action":"show_text","value":["Pack format ",{"nbt":"Current.data_pack_version","storage":"ver:sion"}]}},{"nbt":"Current.name","storage":"ver:sion"}]]}')
+    pack.min_format, pack.max_format = 16, 61
+    pack.supported_formats = {"min_inclusive":16,"max_inclusive":61}
+    ctx.data.overlays["legacy_text_components"] = pack
+    
