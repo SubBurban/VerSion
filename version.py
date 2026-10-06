@@ -41,10 +41,10 @@ def overlays(ctx: Context):
         if format < 45: #for formats <45, "functions" was "function", however beet doesn't seem to support that, so manually it is
             if format >= 23:
                 pack.extra["data/ver/functions/sion.mcfunction"] = funcSion
-            pack.extra["data/ver/functions/overlay_data.mcfunction"] = funcLoad
+            pack.extra["data/ver/functions/_/overlay_data.mcfunction"] = funcLoad
         else:
             pack.functions["ver:sion"] = funcSion
-            pack.functions["ver:overlay_data"] = funcLoad
+            pack.functions["ver:_/overlay_data"] = funcLoad
         ctx.data.overlays[f"format_{format}"] = pack
     ctx.data.mcmeta.data["overlays"]["entries"] = entries
 
