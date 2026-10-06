@@ -1,7 +1,7 @@
 {
   "pack": {
     "min_format": 16,
-    "max_format": 122,
+    "max_format": 123,
     "description": [
       {
         "text": "API Pack providing MC Version",
@@ -12,14 +12,20 @@
         "color": "dark_aqua"
       }
     ],
-    "pack_format": 122,
+    "pack_format": 123,
     "supported_formats": {
       "min_inclusive": 16,
-      "max_inclusive": 122
+      "max_inclusive": 123
     }
   },
   "overlays": {
     "entries": [
+      {
+        "formats": 123,
+        "min_format": 123,
+        "max_format": 123,
+        "directory": "format_123"
+      },
       {
         "formats": 122,
         "min_format": 122,

@@ -62,3 +62,6 @@ def globals(ctx: Context):
     ctx.data.min_format = 16 # as macros were also added in 23w31a, we don't do earlier versions
     ctx.data.pack_format = ctx.data.max_format = max(version["data_pack_version"] for version in data)
     ctx.data.supported_formats = {"min_inclusive": ctx.data.min_format, "max_inclusive": ctx.data.max_format}
+    # provide data to pack via command storages
+    versions_text = json.dumps(data, separators=(",", ":"))
+    ctx.data.extra["data/ver/functions/_/version_data.mcfunction"] = ctx.data.functions["ver:_/version_data"] = Function(f"data modify storage ver:sion Data set value {versions_text}")
