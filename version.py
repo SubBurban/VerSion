@@ -1,4 +1,4 @@
-from beet import Context, JsonFile, DataPack, Function
+from beet import Context, JsonFile, DataPack, Function, TextFile
 import json
 from urllib.request import urlopen
 
@@ -56,6 +56,8 @@ def globals(ctx: Context):
     ctx.data.extra["data/ver/functions/_/fetch_data.mcfunction"] = ctx.data.functions["ver:_/fetch_data"]
     # pack description
     ctx.data.description = ctx.meta["desc"]
+    # license
+    ctx.data.extra["LICENSE"] = TextFile(source_path="./LICENSE")
     with urlopen(
 			"https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json"
 		) as response:
