@@ -1,1 +1,1 @@
-data modify storage ver:sion Current set value {Format:69,Name:"25w09a"}
+data modify storage ver:sion Current set value {data_pack_version:69,name:"25w09a"}

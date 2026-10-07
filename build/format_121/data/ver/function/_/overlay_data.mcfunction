@@ -1,1 +1,1 @@
-data modify storage ver:sion Current set value {Format:121,Name:"26.3"}
+data modify storage ver:sion Current set value {data_pack_version:121,name:"26.3"}
